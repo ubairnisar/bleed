@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dashboard</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="static/home.js"></script>
+  <script src="static/tailwind.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="viewport" content="initial-scale = 1 , width =  device-width">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16" />
+
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+
+<header class="text-gray-600 body-font flex-col md:flex-row shadow-xl shadow-slate-400 rounded-2xl m-4 transition ease-in-out">
+  <div class="container mx-auto lg:flex lg:flex-wrap p-5 flex-col xl:flex-row items-center">
+    <a class="lg:flex title-font font-medium items-center text-gray-900 mb-4 sm:mb-0">
+
+      <a href = "{{url_for('home')}}"><img  src="static/logo.png" alt="Logo" width="80" class  = "-rotate-6 ">
+        </a>
+      <span class="text-2xl font-black text-red-600 " , style = "font-family: 'Indie Flower', cursive; ">Bleed "the smart way"</span>
+    <nav class="md:ml-auto lg:flex lg:flex-wrap items-center text-base justify-center">
+      <a href = "/who" class="mr-20 underline hover:text-gray-900">Who can donate blood?</a>
+      <a href = "/why" class="mr-5 underline hover:text-gray-900">Why to donate blood?</a>
+      <a href = "/donationprocess" class="mr-5 underline hover:text-gray-900">Donation Process</a>
+
+    </nav>
+    <a href = "{{url_for('logout')}}" class="mr-5 inline-flex items-center bg-blue-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout</a>
+      </a>
+  </div>
+</header>
+<body>
+  <div class=" flex justify-center items-center m-5 bg-blue-100">
+<!--    <h2 class="text-2xl md:text-4xl lg:text-6xl  text-white mb-6">Welcome to Mice City</h2>-->
+<!--    <h2 class="mb-6">There is never a happy day at mice city</h2>-->
+    <p  class="inline-block  text-lg py-2 px-4 text-blue-800 " >KEEP ON DONATING <span class = "text-red-800 text-2xl" style = "font-family: 'Indie Flower', cursive; ">{{name}}</span> </p>
+
+       <a href ="{{url_for('donateblood')}}"  class="inline-block  text-lg py-2 px-4  text-yello-700 bg-red-400 hover:bg-grey-300 hover:text-yellow-800 transition ease-in duration-150">-> Donate <-</a>
+
+  </div>
+
+
+
+
+
+<div class="flex justify-center items-center  w-full {{show}} bg-blue-100  pb-9">
+  <div class="-my-2 py-2 sm:px-6 lg:px-8 sm:-mx-6 lg:-mx-8">
+      <p  class="inline-block  text-lg py-4 px-4 text-white-800 bg-red-400 rounded m-1">Donations History</p>
+    <div class="border-b border-gray-200 sm:rounded-lg">
+      <table class="min-w-full divide-y divide-blue-100 overflow-y-auto">
+        <thead class="bg-blue-200">
+          <tr class="uppercase text-left text-xs font-medium text-gray-500">
+            <th scope="col" class="px-6 py-3">token</th>
+            <th scope="col" class="px-6 py-3">time</th>
+              <th scope="col" class="px-6 py-3">date</th>
+              <th scope="col" class="px-6 py-3">Hospital</th>
+            <th scope="col" class="px-6 py-3">city</th>
+                          <th scope="col" class="px-6 py-3">location</th>
+
+            <th scope="col" class="relative px-6 py-3">
+              <span >Status
+              </span>
+
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-blue-100">
+        {% for row in send %}
+          <tr class="text-black-500 whitespace-nowrap text-left text-sm">
+          {% for da in row %}
+            <td class="px-6 py-4">{{ da }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+</body>
+
+<footer class="text-gray-600 body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+<img src="static/logo.png" alt="Logo" width="80" class  = "-rotate-6 ">
+      <span class="ml-3 text-xl" style = "font-family: 'Indie Flower', cursive; ">bleed the smart way</span>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022 bleed the smart way —
+      <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@FSE-Project</a>
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a class="text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</footer>
+</html>

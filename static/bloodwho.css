@@ -1,0 +1,203 @@
+
+#containerBlood {
+  height: 370px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  left: 200px;
+  width: 248px;
+}
+
+#containerBlood div { position: absolute; }
+
+.pour {
+  position: absolute;
+  left: 46%;
+  width: 20px;
+  height: 0px;
+  background-color: #e74c3c;
+  border-radius: 10px
+}
+
+.pourTube {
+  position: absolute;
+  left: 46%;
+  width: 20px;
+  height: 0px;
+  background-color: rgb(211, 211, 211);
+  background-color: rgba(211, 211, 211, 0.5);
+  border-radius: 10px;
+  border-color: rgba(211, 211, 211, 0.9);
+  border-style: solid;
+  border-bottom: 0px;
+}
+
+#beaker {
+  border: 10px solid #D3D3D3;
+  border-top: 0;
+  border-radius: 0 0 30px 30px;
+  height: 200px;
+  left: 14px;
+  bottom: 0;
+  width: 200px;
+}
+
+#plastic {
+  background-color: rgb(211, 211, 211);
+  background-color: rgba(211, 211, 211, 0.5);
+  bottom: 0;
+  height: 220px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 9;
+}
+
+#beaker:before {
+  border: 10px solid #D3D3D3;
+  border-bottom: 0;
+  border-right: 0;
+  border-radius: 14px 0px 0 0;
+  content: '';
+  height: 30px;
+  position: absolute;
+  top: -30px;
+  width: 90px;
+}
+
+#beaker:after {
+  border: 10px solid #D3D3D3;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 0px 14px 0 0;
+  content: '';
+  height: 30px;
+  position: absolute;
+  top: -30px;
+  width: 90px;
+}
+
+#beaker:before { left: -10px; }
+#beaker:after { right: -10px; }
+
+#liquid {
+  background-color: #e74c3c;
+  border: 10px solid #e74c3c;
+  border-radius: 0 0 20px 20px;
+  bottom: 0;
+  height: 0px;
+  overflow: hidden;
+  width: 180px;
+}
+
+#liquid:after {
+  background-color: rgba(255, 255, 255, 0.25);
+  bottom: -10px;
+  content: '';
+  height: 200px;
+  left: -40px;
+  position: absolute;
+  transform: rotate(30deg);
+  -webkit-transform: rotate(15deg);
+  width: 110px;
+}
+
+#liquid .bubble {
+  -webkit-animation-name: bubble;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  background-color: rgba(255, 255, 255, 0.2);
+  bottom: 0;
+  border-radius: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+@-webkit-keyframes bubble {
+  0% { bottom: 0; }
+
+   50% {
+     background-color: rgba(255, 255, 255, 0.2);
+      bottom: 80px;
+   }
+
+   100% {
+     background-color: rgba(255, 255, 255, 0);
+      bottom: 160px;
+   }
+}
+
+.bubble1 {
+  left: 10px;
+  -webkit-animation-delay: 1000ms;
+  -webkit-animation-duration: 10000ms;
+}
+
+.bubble2 {
+  left: 50px;
+  -webkit-animation-delay: 700ms;
+  -webkit-animation-duration: 11000ms;
+}
+
+.bubble3 {
+  left: 100px;
+  -webkit-animation-delay: 1200ms;
+  -webkit-animation-duration: 13000ms;
+}
+
+.bubble4 {
+  left: 130px;
+  -webkit-animation-delay: 1100ms;
+  -webkit-animation-duration: 7000ms;
+}
+
+.bubble5 {
+  left: 170px;
+  -webkit-animation-delay: 1300ms;
+  -webkit-animation-duration: 8000ms;
+}
+
+
+.drop{
+  position: relative;
+  top: -16px;
+  left: 46%;
+  width: 20px;
+  height: 20px;
+  margin-left: -1px;
+  border-radius: 50%;
+  background: #ad2d2d;
+  z-index: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+  -webkit-border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: rgba(0,0,0,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  -webkit-transform: rotateZ(-45deg)   ;
+  transform: rotateZ(-45deg)   ;
+}
+
+.firstDrop{
+  animation: dropAni 1s 15;
+}
+
+.secondDrop{
+  animation: dropAni 0.8s 2s 15;
+}
+
+.thirdDrop{
+  animation: dropAni 0.6s 6s 15;
+}
+
+@keyframes dropAni{
+  0%{
+    top: 0px;
+  }
+  100%{
+    top: 170px;
+  }
+}

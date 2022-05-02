@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register as donor </title>
+    <script src="static/tailwind.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="static/home.js"></script>
+</head>
+
+<header class="text-gray-600 body-font flex-col md:flex-row shadow-xl shadow-slate-400 rounded-2xl m-4 transition ease-in-out">
+  <div class="container mx-auto lg:flex lg:flex-wrap p-5 flex-col xl:flex-row items-center">
+    <a class="lg:flex title-font font-medium items-center text-gray-900 mb-4 sm:mb-0">
+
+      <a href = "{{url_for('home')}}"><img  src="static/logo.png" alt="Logo" width="80" class  = "-rotate-6 ">
+        </a>
+      <span class="text-2xl font-black text-red-600 " , style = "font-family: 'Indie Flower', cursive; ">Bleed "the smart way"</span>
+    <nav class="md:ml-auto lg:flex lg:flex-wrap items-center text-base justify-center">
+      <a href = "/who" class="mr-20 underline hover:text-gray-900">Who can donate blood?</a>
+      <a href = "/why" class="mr-5 underline hover:text-gray-900">Why to donate blood?</a>
+      <a href = "/donationprocess" class="mr-5 underline hover:text-gray-900">Donation Process</a>
+      <a href = "{{url_for('login')}}" class="mr-5 inline-flex items-center bg-blue-500 text-white border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Login</a>
+    </nav>
+    <a href = "{{url_for('register')}}">
+    <button  class="lg:inline-flex items-center bg-red-600 text-white border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 lg:mt-0">Become a donor
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+
+    </button>
+      </a>
+  </div>
+</header>
+<body>
+<!--<h1>-->
+<!--   register for donor of bleed the smart way-->
+
+<!--</h1>-->
+<!--<br>-->
+<!--<form method = "POST" action = "">-->
+<!--    {{ form.hidden_tag() }}-->
+<!--    {{ form.username }}-->
+<!--    {{ form.cnic }}-->
+<!--    {{ form.email }}-->
+<!--    {{ form.age }}-->
+<!--    {{ form.bloodgroup }}-->
+<!--    {{ form.password }}-->
+<!--    {{ form.confirm }}-->
+<!--    {{ form.secretof }}-->
+<!--    {{ form.submit }}-->
+<!--</form>-->
+<!--<br>-->
+
+<div class="flex justify-center items-center   bg-blue-200 shadow-xl shadow-slate-400 rounded-2xl m-4">
+    <div class="w-1/2 bg-white rounded shadow-2xl p-8 m-4">
+        <h1 class="block w-full text-center text-red-600 mb-6 text-2xl font-black text-center">Register As a Blood Donor</h1>
+        <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="username">Username</label>
+                {{ form.username(class_ = "border py-2 px-3 text-grey-800") }}
+<!--                <input class="border py-2 px-3 text-grey-800" type="text" name="first_name" id="first_name">-->
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="cnic">CNIC</label>
+                {{ form.cnic(class_ = "border py-2 px-3 text-grey-800") }}
+<!--                <input class="border py-2 px-3 text-grey-800" type="text" name="last_name" id="last_name">-->
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="email">Email</label>
+                {{ form.email(class_ = "border py-2 px-3 text-grey-800") }}
+<!--                <input class="border py-2 px-3 text-grey-800" type="email" name="email" id="email">-->
+            </div>
+            <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="age">Age</label>
+                {{ form.age(class_ = "border py-2 px-3 text-grey-800") }}
+<!--                <input class="border py-2 px-3 text-grey-800" type="password" name="password" id="password">-->
+            </div>
+                        <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="bgroub">Blood Group</label>
+                {{ form.bloodgroup(class_ = "border py-2 px-3 text-grey-800") }}
+<!--                <input class="border py-2 px-3 text-grey-800" type="email" name="email" id="email">-->
+            </div>
+                        <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="ps">Password</label>
+                {{ form.password(class_ = "border py-2 px-3 text-grey-800") }}
+<!--                <input class="border py-2 px-3 text-grey-800" type="email" name="email" id="email">-->
+            </div>
+                        <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="confirm">Confirm Password</label>
+                {{ form.confirm(class_ = "border py-2 px-3 text-grey-800") }}
+<!--                <input class="border py-2 px-3 text-grey-800" type="email" name="email" id="email">-->
+            </div>
+                        <div class="flex flex-col mb-4">
+                <label class="mb-2 font-bold text-lg text-gray-900" for="string">Security String(In case you forgot your password)</label>
+                {{ form.secretof(class_ = "border py-2 px-3 text-grey-800 ") }}
+<!--                <input class="border py-2 px-3 text-grey-800" type="email" name="email" id="email">-->
+            </div>
+
+ {{ form.submit(class_ = "block bg-red-600 hover:bg-teal-600 text-white uppercase text-lg mx-auto p-4 rounded") }}
+<!--            <button class="block bg-teal-400 hover:bg-teal-600 text-white uppercase text-lg mx-auto p-4 rounded" type="submit">Create Account</button>-->
+        </form>
+        <a class="block w-full text-center no-underline mt-4 text-sm text-gray-700 hover:text-gray-900 " href="/login">Already have an account?</a>
+    </div>
+</div>
+<h1>{{error}}</h1>
+<!--<a  href =  "{{url_for('login')}}" > Already have account</a>-->
+</body>
+<footer class="text-gray-600 body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+<img src="static/logo.png" alt="Logo" width="80" class  = "-rotate-6 ">
+      <span class="ml-3 text-xl" style = "font-family: 'Indie Flower', cursive; ">bleed the smart way</span>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022 bleed the smart way —
+      <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@FSE-Project</a>
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a class="text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</footer>
+</html>
